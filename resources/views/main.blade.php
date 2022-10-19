@@ -439,7 +439,7 @@
             methods:{
                 //<!--NEW CODE-->
                 showStatsFun(){
-
+                    this.Stats = []
                     let groupBy = function(xs, key) {
                         return xs.reduce(function(rv, x) {
                             (rv[x[key]] = rv[x[key]] || []).push(x);
@@ -573,11 +573,12 @@
                 },
                 filterTable(){
 
+                    this.show_tables_info = this.show_tables_info_original
                     if (this.Date_1 != '' && this.Date_2 != ''){
                         temp = this.show_tables_info.filter(dates => dates.torg_date >= this.Date_1 && dates.torg_date <= this.Date_2);
-                        this.show_tables_info = temp
+                        this.show_tables_info = temp/*
                     }else{
-                        this.show_tables_info = this.show_tables_info_original
+                        this.show_tables_info = this.show_tables_info_original*/
                     }
 
                     //this.users = temp
